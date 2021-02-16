@@ -82,12 +82,20 @@ const RNPollItem: React.FC<IRNPollItemProps> = ({
 
   return (
     <RNBounceable bounceEffect={0.97} onPress={onPress} disabled={disabled}>
+      <ImageComponent
+        source={checkMarkIconImageSource}
+        style={[styles.checkMarkImageStyle, checkMarkImageStyle]}
+      />
       <View style={_container(borderColor, _borderWidth)}>
         <Animated.View
           style={[
             StyleSheet.absoluteFill,
             _animatedViewStyle(fillBackgroundColor, width),
           ]}
+        />
+        <ImageComponent
+          source={checkMarkIconImageSource}
+          style={[styles.checkMarkImageStyle, checkMarkImageStyle]}
         />
         <Text style={[styles.choiceTextStyle, choiceTextStyle]}>{text}</Text>
         {hasBeenVoted && (
